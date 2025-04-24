@@ -19,7 +19,7 @@ employeeController.createemployee = async (req, res) => {
 // DELETE
 employeeController.deleteemployee = async (req, res) => {
 const deletedemployee = await employeeModel.findByIdAndDelete(req.params.id);
-  if (!deletedemployee) {
+  if (!deletedemployee) { 
     return res.status(404).json({ message: "employee dont find" });
   }
   res.json({ message: "employee deleted" });
