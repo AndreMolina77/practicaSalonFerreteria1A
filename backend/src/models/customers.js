@@ -30,17 +30,17 @@ const customersSchema = new Schema(
     },
 
     password: {
-      type: Number,
+      type: String,
       require: true,
     },
 
     telephone: {
-      type: Number,
+      type: String,
       require: true,
     },
 
-    dui: {
-      type: Number,
+    dui: {  
+      type: String,
       require: true,
     },
     isVerified: {
