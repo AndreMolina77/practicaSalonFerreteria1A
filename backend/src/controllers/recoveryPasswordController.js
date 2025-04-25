@@ -23,6 +23,7 @@ recoveryPasswordController.requestCode = async (req, res) => {
             userType = "client"
         }
         else{        
+            userFound = await employeeModel.findOne({email})
             if(userFound){
                 userType = "employee"
             }
@@ -59,6 +60,44 @@ recoveryPasswordController.requestCode = async (req, res) => {
     } catch (error) {
         console.log("error" + error);
     }
+}
+
+//VERIFICAR CODIGO
+recoveryPasswordController.verifyCode = async (req,res) => {
+    const { code } = req.body //Pedirle algo al profe will
+
+    try {
+        //Aquí accederemos al codigo generado
+        const token = req.cookies.tokenRecoveryCode;
+        //Le sacaremos el código que tiene el token
+        const decoded = jsonwebtoken.verify(token, config.JWT.secret) //Se decodica el token con la palabra secreta
+
+        //Comparar 1 el codigo que el usuario que escribe
+        // con el codigo que tengo guardado en el token
+        if(decoded.code !== code){
+            return /*return hace que no siga pasando, pasando el qué? no sé */res.json({message:"Invalid code"})
+        }
+
+        const newToken = jsonwebtoken.sign(
+            //1- ¿Qué vamos a guardar?
+            {email: decoded.email, 
+             code: decoded.code,
+             userType: decoded.userType,
+             verified: true
+            },
+            //2- Secret key
+            config.JWT.secret,
+            {expiresIn: "20m"}
+        )
+        res.cookie("tokenRecoveryCode", newToken, {maxAge: 20*60*1000},
+
+        res.json({message: "Code verified successfully"})
+        )
+    } catch (error) {
+        console.log("error" + error)
+        
+    }
+
 }
 
 export default recoveryPasswordController;
