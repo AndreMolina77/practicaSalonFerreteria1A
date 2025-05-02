@@ -1,11 +1,17 @@
 /*
     Campos:
-        nombre
-        descripcion
-        precio
-        stock
+       "name": "",
+       "lastName": "",
+       "birthday": "",
+       "email": "",
+       "address": "",
+       "password": "",
+       "hireDate": "",
+       "telephone": "",
+       "dui": "",
+       "isVerified": "",
+       "isssnumber": ""
 */
-
 import { Schema, model } from "mongoose";
 
 const employeeSchema = new Schema(
