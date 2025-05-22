@@ -12,6 +12,11 @@ import registerEmployee from "./src/routes/registerEmployee.js"
 import recoveryPasswordRoutes from "./src/routes/recoveryPassword.js"
 import logoutRoute from "./src/routes/logout.js"
 import cors from "cors"
+import brandRoutes from "./src/routes/brand.js"
+
+
+// Creo una constante que es igual a la libreria que importé
+const app = express();
 
 app.use(
   cors({
@@ -21,8 +26,6 @@ app.use(
   })
 );
 
-// Creo una constante que es igual a la libreria que importé
-const app = express();
 //s
 //Que acepte datos en json
 app.use(express.json());
@@ -44,6 +47,8 @@ app.use("/api/login", loginRoute)
 app.use("/api/logout", logoutRoute);
 
 app.use("/api/RecoveryPassword", recoveryPasswordRoutes);
+app.use("/api/brands", brandRoutes);
+
 
 // Exporto la constante para poder usar express en otros archivos
 export default app;
