@@ -10,6 +10,17 @@ import loginRoute from "./src/routes/login.js"
 import registerClientsRoutes from "./src/routes/registerClients.js"
 import registerEmployee from "./src/routes/registerEmployee.js"
 import recoveryPasswordRoutes from "./src/routes/recoveryPassword.js"
+import logoutRoute from "./src/routes/logout.js"
+import cors from "cors"
+
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    // Permitir envío de cookies y credenciales
+    credentials: true
+  })
+);
+
 // Creo una constante que es igual a la libreria que importé
 const app = express();
 //s
@@ -27,8 +38,10 @@ app.use("/api/branches", branchesRoutes);
 app.use("/api/reviews", reviewRoutes);
 
 app.use("/api/registerClients", registerClientsRoutes)
+
 app.use("/api/registerEmployee", registerEmployee);
 app.use("/api/login", loginRoute)
+app.use("/api/logout", logoutRoute);
 
 app.use("/api/RecoveryPassword", recoveryPasswordRoutes);
 
