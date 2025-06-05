@@ -130,7 +130,6 @@ return{
     deleteBrands,
     updateBrands,
     handleEdit
-
 }
 }
 export default useDataBrands;

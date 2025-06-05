@@ -23,7 +23,7 @@ const useDataCustomers = () => {
     const [password, setPassword] =("")
     const [telephone, setTelephone] = ("")
     const [DUI, setDUI] = useState("")
-    const [isVerified, setIsVerified] = useState(true)
+    const [isVerified, setIsVerified] = useState(false)
     const [customers, setCustomers] = useState("")
     const [loading, setLoading] = useState(true)
 
@@ -100,5 +100,61 @@ const useDataCustomers = () => {
         setActiveTab("form")
     }
     const handleEdit = async (e) => {
-        
+        e.preventDefault()
+        try {
+            const editCustomer = {
+                name: name,
+                lastName: lastName,
+                birthday: birthday,
+                email: email,
+                password: password,
+                telephone: telephone,
+                DUI: DUI,
+                isVerified: isVerified
+            }
+            const response = await fetch(`${API}/${id}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(editCustomer)
+            })
+            if (!response.ok){
+                throw new Error("Error al actualizar el cliente")
+            }
+            toast.success("Cliente actualizado")
+            setId(""),
+            setName("")
+            setlastName("")
+            setBirthday("")
+            setEmail("")
+            setPassword("")
+            setTelephone("")
+            setDUI("")
+            setIsVerified(true),
+            fetchCustomers()
+        }catch(error){
+            console.error("Error al editar el ciente: ", error)
+        }
     }
+    return{
+        activeTab, setActiveTab,
+id, setId,
+name, setName,
+lastName, setlastName,
+birthday, setBirthday,
+email, setEmail,
+password, setPassword,
+telephone, setTelephone,
+DUI, setDUI,
+isVerified, setIsVerified,
+customers,
+loading,
+saveCustomers,
+deleteCustomers,
+updateCustomers,
+handleEdit
+
+    }
+}
+export default useDataCustomers
