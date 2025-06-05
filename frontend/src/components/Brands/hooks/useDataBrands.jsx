@@ -14,7 +14,7 @@ name: {
 */
 
 import { useEffect, useState } from "react";
-import {toast} from "rect-hot-toast"
+import {toast} from "react-hot-toast"
 
 const useDataBrands = () => {
     const API = "http://localhost:4000/api/brands"
@@ -55,7 +55,7 @@ const useDataBrands = () => {
             body: JSON.stringify(newBrand)
         })
         if(!response.ok){
-            throw new Error("Hubo un error al registrar el proveedor")
+            throw new Error("Hubo un error al registrar la marca")
         }
         const data = await response.json()
         toast.success("Proveedor registrado")
