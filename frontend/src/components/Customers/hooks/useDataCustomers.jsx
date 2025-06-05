@@ -87,5 +87,18 @@ const useDataCustomers = () => {
         toast.success('Cliente Eliminado');
         fetchCustomers()
       }
-
-}
+      const updateCustomers = async (dataCustomers) => {
+        setId(dataCustomers._id)
+        setName(dataCustomers.productName)
+        setlastName(dataCustomers.lastName)
+        setBirthday(dataCustomers.birthday)
+        setEmail(dataCustomers.email)
+        setPassword(dataCustomers.password)
+        setTelephone(dataCustomers.telephone)
+        setDUI(dataCustomers.DUI)
+        setIsVerified(data.isVerified)
+        setActiveTab("form")
+    }
+    const handleEdit = async (e) => {
+        
+    }

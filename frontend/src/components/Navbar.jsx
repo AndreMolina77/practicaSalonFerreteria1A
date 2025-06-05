@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {NavLink} from "react-router-dom"
 
-const NavNar = () => {
+const NavBar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
     const navItems = [
         {to: "/brands", label: "Marcas"},
@@ -47,3 +47,5 @@ const NavNar = () => {
       </nav>
     )
 }
+
+export default NavBar
