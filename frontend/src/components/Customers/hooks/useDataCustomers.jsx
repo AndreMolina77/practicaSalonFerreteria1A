@@ -139,22 +139,21 @@ const useDataCustomers = () => {
     }
     return{
         activeTab, setActiveTab,
-id, setId,
-name, setName,
-lastName, setlastName,
-birthday, setBirthday,
-email, setEmail,
-password, setPassword,
-telephone, setTelephone,
-DUI, setDUI,
-isVerified, setIsVerified,
-customers,
-loading,
-saveCustomers,
-deleteCustomers,
-updateCustomers,
-handleEdit
-
+        id, setId,
+        name, setName,
+        lastName, setlastName,
+        birthday, setBirthday,
+        email, setEmail,
+        password, setPassword,
+        telephone, setTelephone,
+        DUI, setDUI,
+        isVerified, setIsVerified,
+        customers,
+        loading,
+        saveCustomers,
+        deleteCustomers,
+        updateCustomers,
+        handleEdit
     }
 }
 export default useDataCustomers
