@@ -1,7 +1,7 @@
 import React from "react"
 import Button from "../Button" // Asumiendo que tu componente Button sigue en el mismo lugar
 
-const BrandsCard = ({ brand, deleteBrand, updateBrands }) => {
+const BrandsCard = ({ brand, deleteBrands, updateBrands }) => {
   return (
     <div className="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200">
       <div className="px-6 py-4">
@@ -25,20 +25,16 @@ const BrandsCard = ({ brand, deleteBrand, updateBrands }) => {
         </h2>
 
         {/* Año de la Marca */}
-        <p className="text-gray-500 font-bold mb-1">
-          Año: <span className="font-normal">{brand.year}</span> {/* Usamos 'brand.year' */}
-        </p>
+        <p className="text-gray-500 font-bold mb-1">{brand.year}</p>
 
         {/* Slogan de la Marca */}
-        <p className="text-gray-500 font-bold mb-4">
-          Slogan: <span className="font-normal">{brand.slogan}</span> {/* Usamos 'brand.slogan' */}
-        </p>
+        <p className="text-gray-500 font-bold mb-1">{brand.slogan}</p>
+
 
         {/* Botones de acción */}
-        <div className="flex justify-between gap-2"> {/* Contenedor para los botones */}
             <Button
               label={"Eliminar"}
-              actionButton={() => deleteBrand(brand._id)} // Asumiendo que 'brand' tiene un '_id' para identificarla
+              actionButton={() => deleteBrands(brand._id)} // Asumiendo que 'brand' tiene un '_id' para identificarla
               colorClass={"danger"}
             />
             <Button
@@ -46,7 +42,6 @@ const BrandsCard = ({ brand, deleteBrand, updateBrands }) => {
               actionButton={() => updateBrands(brand)} // Pasamos el objeto 'brand' completo para editar
               colorClass={"warning"}
             />
-        </div>
       </div>
     </div>
   )

@@ -12,14 +12,40 @@ const CostumersCard = (customer, deleteCustomers, updateCustomers) => {
                         {customer.name}{" "} 
                     </span>
                 </h2>
+
+                <p className="text-gray-500 font-bold mb-1">{customer.lastName}</p>
+
+                <p className="text-gray-500 font-bold mb-1">{customer.birthday}</p>
+
+                <p className="text-gray-500 font-bold mb-1">{customer.email}</p>
+
+                <p className="text-gray-500 font-bold mb-1">{customer.password}</p>
+
+                <p className="text-gray-500 font-bold mb-1">{customer.telephone}</p>
+
+                <p className="text-gray-500 font-bold mb-1">{customer.dui}</p>                
+
+                <p className="text-gray-500 font-bold">{customer.isVerified ? "✓ Activo" : "✗ Inactivo"}</p>
                 
+                <Button
+              label={"Eliminar"}
+              actionButton={() => deleteCustomers(customer._id)} 
+              colorClass={"danger"}
+            />
+            <Button
+              label={"Editar Información"}
+              actionButton={() => updateCustomers(customer)} 
+              colorClass={"warning"}
+            />
 
             </div>
         </div>
-        
+ 
         
     )
 }
+
+export default CostumersCard;
 
 /*
 <h2 className="text-xl font-bold text-gray-800 mb-2">

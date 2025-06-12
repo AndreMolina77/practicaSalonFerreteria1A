@@ -11,7 +11,7 @@ const RegisterBrands = ({
   imageBrand,    // This state should now hold a File object or null
   id,
   handleEdit,
-  saveCategory
+  saveBrands
 }) => {
 
   // A helper function to handle form submission
@@ -20,7 +20,7 @@ const RegisterBrands = ({
 
     // Determine which action to call based on `id`
     if (!id) {
-      saveCategory(e); // Call saveCategory if no id (new entry)
+      saveBrands(e); // Call saveCategory if no id (new entry)
     } else {
       handleEdit(e);   // Call handleEdit if id exists (editing existing entry)
     }
@@ -87,9 +87,15 @@ const RegisterBrands = ({
           )}
         </div>
 
-        <button type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
-          {!id ? 'Guardar' : 'Editar'}
-        </button>
+        {!id ? (
+          <button type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onClick={(e) => saveBrands(e)}>
+            Guardar
+          </button>
+        ) : (
+          <button type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onClick={(e) => handleEdit(e)}>
+            Editar
+          </button>
+        )}
       </form>
     </div>
   );
