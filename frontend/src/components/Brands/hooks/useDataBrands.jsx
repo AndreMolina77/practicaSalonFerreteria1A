@@ -17,7 +17,7 @@ import { useEffect, useState } from "react";
 import {toast} from "react-hot-toast"
 
 const useDataBrands = () => {
-    const API = "http://localhost:4000/api/brands"
+    const API = "http://localhost:5000/api/brands"
     const [activeTab, setActiveTab] = useState("list")
     const [id, setId] = useState ("")
     const [name, setName] = useState ("")

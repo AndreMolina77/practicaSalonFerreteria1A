@@ -49,3 +49,5 @@ const RegisterProducts = ({
         </div>
     )
 }
+
+export default RegisterProducts

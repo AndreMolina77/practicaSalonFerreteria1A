@@ -43,3 +43,5 @@ const ProductsCard = (product, deleteProducts, updateProducts) => {
         </div>
     )
 }
+
+export default ProductsCard

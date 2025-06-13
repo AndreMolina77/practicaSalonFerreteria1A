@@ -36,7 +36,7 @@ const useDataProducts = ( ) => {
          headers: {
           "Content-Type": "application/json"
       },
-         body: JSON.stringify(newSupplier)
+         body: JSON.stringify(newProduct)
         })
         if (!response.ok){
             throw new Error("Hubo un error al registrar el producto")
@@ -63,7 +63,7 @@ const useDataProducts = ( ) => {
         toast.success("Producto eliminado")
         fetchProducts()
     }
-    const updateProduct = async (dataProducts) => {
+    const updateProducts = async (dataProducts) => {
         setId(dataProducts._id)
         setName(dataProducts.name)
         setDescription(dataProducts.description)
@@ -85,7 +85,7 @@ const useDataProducts = ( ) => {
                 headers: {
                   "Content-Type": "application/json"
                 },
-                body: JSON.stringify(editSupplier)
+                body: JSON.stringify(editProduct)
               })
               if (!response.ok)
               {
@@ -114,7 +114,7 @@ const useDataProducts = ( ) => {
         loading,
         saveProducts,
         deleteProducts,
-        updateProduct,
+        updateProducts,
         handleEdit
     }
 }

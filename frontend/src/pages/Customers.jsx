@@ -1,6 +1,6 @@
 import React from "react";
 import CustomersList from "../components/Customers/CustomersList";
-import RegisterCustomers from "../components/Customers/FormCustomers";
+import FormCustomers from "../components/Customers/FormCustomers";
 import useDataCustomers from "../components/Customers/hooks/useDataCustomers"
 
 const Customers = () => {
@@ -21,7 +21,7 @@ const Customers = () => {
         deleteCustomers,
         updateCustomers,
         handleEdit
-    } = useDataCustomers
+    } = useDataCustomers()
 
     return(
         <div className="min-h-screen bg-gray-100 p-6">
@@ -39,7 +39,7 @@ const Customers = () => {
           <div>
             {activeTab === "list" && (
               <div>
-                <ListInventory 
+                <CustomersList 
                 customers={customers} 
                 loading={loading} 
                 deleteCustomers={deleteCustomers} 
@@ -48,7 +48,7 @@ const Customers = () => {
             )}
             {activeTab === "form" && (
               <div>
-                <FormInventory 
+                <FormCustomers
                 setCustomerName={setName} 
                 setCustomerLastName={setlastName} s
                 setCustomerBirthday={setBirthday} 
@@ -57,7 +57,7 @@ const Customers = () => {
                 setCustomerTelephone={setTelephone} 
                 setCustomerDUI={setDUI} 
                 setCustomerIsVerified={setIsVerified} 
-                lastUpdate={lastUpdate} id={id} 
+                id={id} 
                 handleEdit={handleEdit} 
                 saveCustomers={saveCustomers}
                 customerName={name}
@@ -75,3 +75,5 @@ const Customers = () => {
         </div>
     )
 }
+
+export default Customers

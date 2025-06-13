@@ -14,7 +14,7 @@ isVerified
 
 const useDataCustomers = () => {
     const [activeTab, setActiveTab] = useState("list");
-    const API = "http://localhost:4000/api/customers";
+    const API = "http://localhost:5000/api/customers";
     const [id, setId] = useState("")
     const [name, setName] = useState("")
     const [lastName, setlastName] = useState("")
