@@ -25,7 +25,7 @@ const CostumersCard = (customer, deleteCustomers, updateCustomers) => {
 
                 <p className="text-gray-500 font-bold mb-1">{customer.dui}</p>                
 
-                <p className="text-gray-500 font-bold">{customer.isVerified ? "✓ Activo" : "✗ Inactivo"}</p>
+                <p className="text-gray-500 font-bold">{customer.isVerified ? "✓ Verificado" : "✗ No Verificado"}</p>
                 
                 <Button
               label={"Eliminar"}

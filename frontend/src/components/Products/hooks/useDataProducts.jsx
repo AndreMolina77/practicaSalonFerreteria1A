@@ -9,7 +9,7 @@ const useDataProducts = ( ) => {
     const [price, setPrice] = useState("")
     const [stock, setStock] = useState("")
     const [products, setProducts] = useState("")
-    const [loaing, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true)
 
     const fetchProducts = async () => {
         const response = await fetch(API);

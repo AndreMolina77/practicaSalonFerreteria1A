@@ -1,8 +1,8 @@
 /*
     Campos:
         nombre
-        descripcion
-        precio
+        description
+        price
         stock
 */
 
