@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast"
 const useDataProducts = ( ) => {
     const [activeTab, setActiveTab] = useState("")
-    const API = "http://localhost:5000/api/suppliers"
+    const API = "http://localhost:5000/api/products"
     const [id, setId] = useState("")
     const [name, setName] = useState("")
     const [description, setDescription] = useState("")
     const [price, setPrice] = useState("")
     const [stock, setStock] = useState("")
-    const [products, setProducts] = useState("")
+    const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
 
     const fetchProducts = async () => {
@@ -20,9 +20,11 @@ const useDataProducts = ( ) => {
         setProducts(data)
         setLoading(false)
     }
+
     useEffect(() => {
         fetchProducts()
     }, [])
+
     const saveProducts = async (e) => {
         e.preventDefault();
         const newProduct = {

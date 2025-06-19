@@ -1,7 +1,7 @@
 import React from "react"
 import Button from "../Button"
 
-const CostumersCard = (customer, deleteCustomers, updateCustomers) => {
+const CostumersCard = ({customer, deleteCustomers, updateCustomers}) => {
     return(
         <div className="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200">
             <div className="px-6 py-4">
@@ -13,19 +13,19 @@ const CostumersCard = (customer, deleteCustomers, updateCustomers) => {
                     </span>
                 </h2>
 
-                <p className="text-gray-500 font-bold mb-1">{customer.lastName}</p>
+                <p className="text-gray-500 font-bold mb-1">Apellido: {customer.lastName}</p>
 
-                <p className="text-gray-500 font-bold mb-1">{customer.birthday}</p>
+                <p className="text-gray-500 font-bold mb-1">Cumpleaños: {customer.birthday}</p>
 
-                <p className="text-gray-500 font-bold mb-1">{customer.email}</p>
+                <p className="text-gray-500 font-bold mb-1">Correo electrónico: {customer.email}</p>
 
-                <p className="text-gray-500 font-bold mb-1">{customer.password}</p>
+                <p className="text-gray-500 font-bold mb-1">Contraseña: {customer.password}</p>
 
-                <p className="text-gray-500 font-bold mb-1">{customer.telephone}</p>
+                <p className="text-gray-500 font-bold mb-1">Teléfono{customer.telephone}</p>
 
-                <p className="text-gray-500 font-bold mb-1">{customer.dui}</p>                
+                <p className="text-gray-500 font-bold mb-1">DUI: {customer.dui}</p>                
 
-                <p className="text-gray-500 font-bold">{customer.isVerified ? "✓ Verificado" : "✗ No Verificado"}</p>
+                <p className="text-gray-500 font-bold">Verificado: {customer.isVerified ? "✓ Verificado" : "✗ No Verificado"}</p>
                 
                 <Button
               label={"Eliminar"}

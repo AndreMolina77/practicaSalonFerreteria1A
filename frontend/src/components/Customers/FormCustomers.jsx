@@ -11,23 +11,21 @@ isVerified
 
 import React from "react";
 const RegisterCustomers= ({
-    customerName, 
-    setCustomerName, 
-    customerLastName, 
-    setCustomerLastName, 
-    customerBirthday, 
-    setCustomerBirthday, 
-    customerPassword, 
-    setCustomerPassword, 
-    customerTelephone, 
-    setcustomerTelephone, 
-    customerDUI, 
-    setCustomerDUI, 
-    customerIsVerified, 
-    setCustomerIsVerified, 
-    id, 
-    handleEdit, 
-    saveCustomers }) => {
+        id, 
+        name, setName,
+        lastName, setlastName,
+        birthday, setBirthday,
+        email, setEmail,
+        password, setPassword,
+        telephone, setTelephone,
+        DUI, setDUI,
+        isVerified, setIsVerified,
+        customers,
+        loading,
+        saveCustomers,
+        deleteCustomers,
+        updateCustomers,
+        handleEdit }) => {
         return(
             <div className="">
                       <form className="w-full max-w-lg mx-auto mt-10 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -52,12 +50,12 @@ const RegisterCustomers= ({
                         </div>
 
                         <div>
-                            <label className="block text-gray-700 font-bold mb-2" htmlFor="telephone"></label>
+                            <label className="block text-gray-700 font-bold mb-2" htmlFor="telephone">Teléfono</label>
                             <input type="tel" name="telephone" pattern="^[267][0-9]{3}-?[0-9]{4}$" value={customerTelephone} onChange={(e) => setcustomerTelephone(e.target.value)} className="w-full px-3 border rounded" placeholder="Ej: 7533-2222 o 75332222" />
                         </div>
 
                         <div>
-                            <label className="vblock text-gray-700 font-bold mb-2" htmlFor="DUI"></label>
+                            <label className="vblock text-gray-700 font-bold mb-2" htmlFor="DUI">DUI</label>
                             <input type="text" pattern="^[0-9]{8}-[0-9]$" maxlength="10" value={customerDUI} onChange={(e) => setCustomerDUI(e.target.value)} className="w-full px-3 border rounded" />
                         </div>
 
@@ -70,11 +68,11 @@ const RegisterCustomers= ({
                         </div>
 
                         {!id ? (
-                            <button type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onClick={(e) => saveCustomers(e)}>
+                            <button type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 mt-4" onClick={(e) => saveCustomers(e)}>
                                 Guardar
                             </button>
                         ) : (
-                            <button type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onClick={(e) => handleEdit(e)}>
+                            <button type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 m5-4" onClick={(e) => handleEdit(e)}>
                                 Editar
                             </button>
                         )}

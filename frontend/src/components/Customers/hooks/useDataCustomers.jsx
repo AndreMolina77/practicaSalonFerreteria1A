@@ -19,12 +19,12 @@ const useDataCustomers = () => {
     const [name, setName] = useState("")
     const [lastName, setlastName] = useState("")
     const [birthday, setBirthday] = useState("")
-    const [email, setEmail] = ("")
-    const [password, setPassword] =("")
-    const [telephone, setTelephone] = ("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] =useState("")
+    const [telephone, setTelephone] = useState("")
     const [DUI, setDUI] = useState("")
     const [isVerified, setIsVerified] = useState(false)
-    const [customers, setCustomers] = useState("")
+    const [customers, setCustomers] = useState([])
     const [loading, setLoading] = useState(true)
 
     const fetchCustomers = async () => {
@@ -36,9 +36,12 @@ const useDataCustomers = () => {
         setCustomers(data)
         setLoading(false)
     }
+
     useEffect(() => {
         fetchCustomers()
     }, [])
+
+    
     const saveCustomers = async (e) => {
         e.preventDefault()
         const newCustomer = {
@@ -123,7 +126,7 @@ const useDataCustomers = () => {
                 throw new Error("Error al actualizar el cliente")
             }
             toast.success("Cliente actualizado")
-            setId(""),
+            setId("")
             setName("")
             setlastName("")
             setBirthday("")
@@ -131,7 +134,7 @@ const useDataCustomers = () => {
             setPassword("")
             setTelephone("")
             setDUI("")
-            setIsVerified(true),
+            setIsVerified(true)
             fetchCustomers()
         }catch(error){
             console.error("Error al editar el ciente: ", error)

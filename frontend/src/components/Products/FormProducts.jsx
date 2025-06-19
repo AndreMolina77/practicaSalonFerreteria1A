@@ -37,11 +37,11 @@ const RegisterProducts = ({
                 </div>
 
                 {!id ? (
-                    <button type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onClick={(e) => saveProducts(e)}>
+                    <button type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 mt-4 " onClick={(e) => saveProducts(e)}>
                             Guardar
                     </button>
                     ) : (
-                    <button type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onClick={(e) => handleEdit(e)}>
+                    <button type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 mt-4" onClick={(e) => handleEdit(e)}>
                             Editar
                     </button>
                         )}

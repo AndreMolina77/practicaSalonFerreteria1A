@@ -9,7 +9,7 @@ import Button from "../Button";
         stock
 */
 
-const ProductsCard = (product, deleteProducts, updateProducts) => {
+const ProductsCard = ({product, deleteProducts, updateProducts}) => {
     return(
         <div className="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200">
             <div className="px-6 py-4">
@@ -35,8 +35,8 @@ const ProductsCard = (product, deleteProducts, updateProducts) => {
                 />
                 <Button 
                 label={"Editar información"}
-                actionButton={() => updateProducts(productº)}
-                colorClass={"danger"}
+                actionButton={() => updateProducts(product)}
+                colorClass={"warning"}
                 />
 
             </div>
