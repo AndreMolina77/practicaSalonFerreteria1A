@@ -64,12 +64,12 @@ const RegisterCustomers= ({
                         </div>
 
                         <div>
-                            <label className="vblock text-gray-700 font-bold mb-2" htmlFor="DUI">DUI:</label>
+                            <label className="block text-gray-700 font-bold mb-2" htmlFor="DUI">DUI:</label>
                             <input type="text" pattern="^[0-9]{8}-[0-9]$" maxLength="10" value={customerDUI} onChange={(e) => setCustomerDUI(e.target.value)} className="w-full px-3 border rounded" />
                         </div>
 
                         <div>
-                            <label className="vblock text-gray-700 font-bold mb-2" htmlFor="isVerified">Está verificado</label>
+                            <label className="block text-gray-700 font-bold mb-2" htmlFor="isVerified">Está verificado</label>
                             <select name="isAVerified" value={customerIsVerified}  onChange={(e) => setCustomerIsVerified(e.target.value === 'true')} className="w-full px--3 py2 border rounded">
                             <option value="true">Si</option>
                             <option value="false">No</option>

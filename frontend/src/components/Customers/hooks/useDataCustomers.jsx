@@ -77,7 +77,7 @@ const useDataCustomers = () => {
         setPassword("")
         setTelephone("")
         setDui("")
-        setIsVerified()
+        setIsVerified("")
     }
     const deleteCustomers = async (id) => {
         const response = await fetch(`${API}/${id}`, {
@@ -101,7 +101,7 @@ const useDataCustomers = () => {
         setPassword(dataCustomers.password)
         setTelephone(dataCustomers.telephone)
         setDui(dataCustomers.dui)
-        setIsVerified(data.isVerified)
+        setIsVerified(dataCustomers.isVerified)
         setActiveTab("form")
     }
     const handleEdit = async (e) => {
