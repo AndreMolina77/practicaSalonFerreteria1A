@@ -11,7 +11,9 @@ const Employees = () => {
         lastName, setlastName,
         birthday, setBirthday,
         email, setEmail,
+        address, setAddress,
         password, setPassword,
+        hireDate, setHireDate,
         telephone, setTelephone,
         dui, setDui,
         isVerified, setIsVerified,
@@ -54,7 +56,9 @@ const Employees = () => {
                 setEmployeeLastName={setlastName} 
                 setEmployeeBirthday={setBirthday} 
                 setEmployeeEmail={setEmail} 
+                setEmployeeAddress={setAddress}
                 setEmployeePassword={setPassword} 
+                setEmployeeHireDate={setHireDate}
                 setEmployeeTelephone={setTelephone} 
                 setEmployeeDUI={setDui} 
                 setEmployeeIsVerified={setIsVerified} 
@@ -65,7 +69,9 @@ const Employees = () => {
                 employeeLastName={lastName}
                 employeeBirthday={birthday}
                 employeeEmail={email}
+                employeeAdress={address}
                 employeePassword={password}
+                employeeHireDate={hireDate}
                 employeeTelephone={telephone}
                 employeedui={dui}
                 employeeIsVerified={isVerified}

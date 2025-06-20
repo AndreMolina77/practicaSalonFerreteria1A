@@ -51,7 +51,7 @@ const Customers = () => {
               <div>
                 <FormCustomers
                 setCustomerName={setName} 
-                setCustomerLastName={setlastName} s
+                setCustomerLastName={setlastName} 
                 setCustomerBirthday={setBirthday} 
                 setCustomerEmail={setEmail} 
                 setCustomerPassword={setPassword} 

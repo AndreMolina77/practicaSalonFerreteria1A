@@ -3,22 +3,22 @@ import CardDashboard from "../components/CardDashboard.jsx"
 
 const Dashboard = () => {
   const [data, setData] = useState({
-    brands: 0,
+    employee: 0,
     customers: 0,
     products: 0
   })
   const fetchData = async () => {
     try {
-      const brandsResponse = await fetch("http://localhost:5000/api/brands")
+      const employeeResponse = await fetch("http://localhost:5000/api/employee")
       const customersResponse = await fetch("http://localhost:5000/api/customers")
       const productsResponse = await fetch("http://localhost:5000/api/products")
 
-      const brandsData = await brandsResponse.json()
+      const employeeData = await employeeResponse.json()
       const customersData = await customersResponse.json()
       const productsData = await productsResponse.json()
 
       setData({
-        brands: brandsData.length,
+        employee: employeeData.length,
         customers: customersData.length,
         products: productsData.length
       })
@@ -34,7 +34,7 @@ const Dashboard = () => {
       <div className="max-w-6xl mx-auto bg-white shadow-md rounded-lg p-6">
         <h1 className="text-3xl font-bold text-gray-800 mb-6">Dashboard</h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <CardDashboard label="Marcas" data={data.brands}/>
+          <CardDashboard label="Empleados" data={data.employee}/>
           <CardDashboard label="Clientes" data={data.customers}/>
           <CardDashboard label="Productos" data={data.products}/>
         </div>

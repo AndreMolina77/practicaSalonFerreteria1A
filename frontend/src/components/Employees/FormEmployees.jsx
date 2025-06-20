@@ -61,7 +61,7 @@ const RegisterEmployees = ({
 
                         <div>
                             <label className="block text-gray-700 font-bold mb-2" htmlFor="hireDate">Fecha de contrato:</label>
-                            <input type="text" name="hireDate" value={employeeHireDate} onChange={(e) => setEmployeeHireDate(e.target.value)} className="w-full px-3 border rounded" placeholder="Ej: correoelectronico@gmail.com" />
+                            <input type="date" name="hireDate" value={employeeHireDate} onChange={(e) => setEmployeeHireDate(e.target.value)} className="w-full px-3 border rounded" placeholder="Ej: correoelectronico@gmail.com" />
                         </div>
 
                         <div>
