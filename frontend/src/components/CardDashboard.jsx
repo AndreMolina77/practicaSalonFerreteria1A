@@ -1,9 +1,9 @@
 import React from "react"
 const CardDashboard = ({ label, data }) => {
   let className = ""
-  if (label === "Marcas") {
+  if (label === "Empleados") {
     className =
-      "bg-blue-500 hover:bg-blue-700 text-white p-6 rounded-lg shadow-md"
+      "bg-purple-500 hover:bg-blue-700 text-white p-6 rounded-lg shadow-md"
   } else if (label === "Clientes") {
     className =
       "bg-yellow-500 hover:bg-yellow-700 text-white p-6 rounded-lg shadow-md"

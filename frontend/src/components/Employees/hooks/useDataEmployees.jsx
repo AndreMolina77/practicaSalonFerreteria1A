@@ -32,7 +32,7 @@ const useDataEmployees = () => {
     const fetchEmployee = async () => {
         const response = await fetch(API)
         if(!response.ok){
-            throw new Error("Hubo un error al obtener los clientes")
+            throw new Error("Hubo un error al obtener los empleados")
         }
         const data = await response.json()
         setEmployee(data)
@@ -68,10 +68,10 @@ const useDataEmployees = () => {
             body: JSON.stringify(newEmployee),
         })
         if(!response.ok){
-            throw new Error("Hubo un error al registrar el cliente")
+            throw new Error("Hubo un error al registrar el empleado")
         }
         const data = await response.json()
-        toast.success('Cliente registrado')
+        toast.success('Empleado registrado')
         setEmployee(data)
         fetchEmployee()
         setName("")
@@ -93,9 +93,9 @@ const useDataEmployees = () => {
           }
         })
         if (!response.ok) {
-          throw new Error("Hubo un error al eliminar el cliente")
+          throw new Error("Hubo un error al eliminar el empleado")
         }
-        toast.success('Cliente Eliminado');
+        toast.success('Empleado Eliminado');
         fetchEmployee()
       }
       const updateEmployee = async (dataEmployee) => {
@@ -133,9 +133,9 @@ const useDataEmployees = () => {
                 body: JSON.stringify(editEmployee)
             })
             if (!response.ok){
-                throw new Error("Error al actualizar el cliente")
+                throw new Error("Error al actualizar el Empleado")
             }
-            toast.success("Cliente actualizado")
+            toast.success("Empleado actualizado")
             setId("")
             setName("")
             setlastName("")
