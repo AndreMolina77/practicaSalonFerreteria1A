@@ -173,3 +173,25 @@ salesController.getSalesByDate = async (req, res) => {
         res.status(500).json({message: "Internal server error"})
     }
 }
+
+//Insertar ventas
+salesController.insertSales = async (req, res) => {
+    try {
+        const { product, category, customer,total, date} = req.body;
+    const newSale = new salesModel({
+        product, 
+        category,
+        customer,
+        total,
+        date
+    })
+    await newSale.save();
+    res.status(200).json({message: "Sales saved"})
+        
+    } catch (error) {
+        console.log("error"+error)
+        res.status(500).json({message: "Internal server error"})
+    } 
+}
+
+export default salesController

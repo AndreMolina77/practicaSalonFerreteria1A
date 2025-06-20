@@ -94,13 +94,13 @@ const useDataCustomers = () => {
       }
       const updateCustomers = async (dataCustomers) => {
         setId(dataCustomers._id)
-        setName(dataCustomers.productName)
+        setName(dataCustomers.name)
         setlastName(dataCustomers.lastName)
         setBirthday(dataCustomers.birthday)
         setEmail(dataCustomers.email)
         setPassword(dataCustomers.password)
         setTelephone(dataCustomers.telephone)
-        setDui(dataCustomers.dui)
+        setDui(dataCustomers.name)
         setIsVerified(dataCustomers.isVerified)
         setActiveTab("form")
     }
@@ -136,6 +136,7 @@ const useDataCustomers = () => {
             setPassword("")
             setTelephone("")
             setDui("")
+            setActiveTab("list")
             setIsVerified(true)
             fetchCustomers()
         }catch(error){

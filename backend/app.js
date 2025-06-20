@@ -13,6 +13,7 @@ import recoveryPasswordRoutes from "./src/routes/recoveryPassword.js"
 import logoutRoute from "./src/routes/logout.js"
 import cors from "cors"
 import brandRoutes from "./src/routes/brand.js"
+import salesRoutes from "./src/routes/sales.js"
 
 
 // Creo una constante que es igual a la libreria que importé
@@ -48,6 +49,8 @@ app.use("/api/logout", logoutRoute);
 
 app.use("/api/RecoveryPassword", recoveryPasswordRoutes);
 app.use("/api/brands", brandRoutes);
+
+app.use("/api/sales", salesRoutes)
 
 
 // Exporto la constante para poder usar express en otros archivos
