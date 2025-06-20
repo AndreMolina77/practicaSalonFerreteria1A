@@ -4,7 +4,7 @@ import {NavLink} from  "react-router-dom"
 const NavBar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
     const navItems = [
-        {to: "/brands", label: "Marcas"},
+        {to: "/employee", label: "Empleados"},
         {to: "/customers", label: "Clientes"},
         {to: "/products", label: "Productos"}
     ]

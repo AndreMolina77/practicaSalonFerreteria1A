@@ -2,10 +2,11 @@ import React from "react"
 import Button from "../Button"
 
 const CostumersCard = ({customer, deleteCustomers, updateCustomers}) => {
-    return(
+    
+  return(
         <div className="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200">
             <div className="px-6 py-4">
-                
+
                 <h2 className="text-xl font-bold text-gray-800 mb-2">
                     Nombre de Usuario:{" "}
                     <span className="text-xl font-medium text-gray-700">
@@ -21,7 +22,7 @@ const CostumersCard = ({customer, deleteCustomers, updateCustomers}) => {
 
                 <p className="text-gray-500 font-bold mb-1">Contraseña: {customer.password}</p>
 
-                <p className="text-gray-500 font-bold mb-1">Teléfono{customer.telephone}</p>
+                <p className="text-gray-500 font-bold mb-1">Teléfono: {customer.telephone}</p>
 
                 <p className="text-gray-500 font-bold mb-1">DUI: {customer.dui}</p>                
 

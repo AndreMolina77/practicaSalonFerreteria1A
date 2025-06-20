@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast"
 const useDataProducts = ( ) => {
-    const [activeTab, setActiveTab] = useState("")
+    const [activeTab, setActiveTab] = useState("list")
     const API = "http://localhost:5000/api/products"
     const [id, setId] = useState("")
     const [name, setName] = useState("")

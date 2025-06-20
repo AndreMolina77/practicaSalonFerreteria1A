@@ -11,21 +11,25 @@ isVerified
 
 import React from "react";
 const RegisterCustomers= ({
-        id, 
-        name, setName,
-        lastName, setlastName,
-        birthday, setBirthday,
-        email, setEmail,
-        password, setPassword,
-        telephone, setTelephone,
-        DUI, setDUI,
-        isVerified, setIsVerified,
-        customers,
-        loading,
-        saveCustomers,
-        deleteCustomers,
-        updateCustomers,
-        handleEdit }) => {
+    customerName, 
+    setCustomerName, 
+    customerLastName, 
+    setCustomerLastName, 
+    customerBirthday, 
+    setCustomerBirthday, 
+    customerPassword, 
+    setCustomerPassword, 
+    customerTelephone, 
+    setCustomerTelephone, 
+    customerDUI, 
+    setCustomerDUI, 
+    customerEmail,
+    setCustomerEmail,
+    customerIsVerified, 
+    setCustomerIsVerified, 
+    id, 
+    handleEdit, 
+    saveCustomers }) => {
         return(
             <div className="">
                       <form className="w-full max-w-lg mx-auto mt-10 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -40,6 +44,11 @@ const RegisterCustomers= ({
                         </div>
 
                         <div>
+                            <label className="block text-gray-700 font-bold mb-2" htmlFor="lastName">Correo electrónico:</label>
+                            <input type="text" name="lastName" value={customerEmail} onChange={(e) => setCustomerEmail(e.target.value)} className="w-full px-3 border rounded" placeholder="Ej: correoelectronico@gmail.com" />
+                        </div>
+
+                        <div>
                             <label className="block text-gray-700 font-bold mb-2" htmlFor="birthday">Cumpleaños</label>
                             <input type="date" name="birthday" value={customerBirthday} onChange={(e) => setCustomerBirthday(e.target.value)} className="w-full px-3 border rounded" placeholder="Cumpleaños de usuario" />
                         </div>
@@ -51,12 +60,12 @@ const RegisterCustomers= ({
 
                         <div>
                             <label className="block text-gray-700 font-bold mb-2" htmlFor="telephone">Teléfono</label>
-                            <input type="tel" name="telephone" pattern="^[267][0-9]{3}-?[0-9]{4}$" value={customerTelephone} onChange={(e) => setcustomerTelephone(e.target.value)} className="w-full px-3 border rounded" placeholder="Ej: 7533-2222 o 75332222" />
+                            <input type="tel" name="telephone" pattern="^[267][0-9]{3}-?[0-9]{4}$" value={customerTelephone} onChange={(e) => setCustomerTelephone(e.target.value)} className="w-full px-3 border rounded" placeholder="Ej: 7533-2222 o 75332222" />
                         </div>
 
                         <div>
-                            <label className="vblock text-gray-700 font-bold mb-2" htmlFor="DUI">DUI</label>
-                            <input type="text" pattern="^[0-9]{8}-[0-9]$" maxlength="10" value={customerDUI} onChange={(e) => setCustomerDUI(e.target.value)} className="w-full px-3 border rounded" />
+                            <label className="vblock text-gray-700 font-bold mb-2" htmlFor="DUI">DUI:</label>
+                            <input type="text" pattern="^[0-9]{8}-[0-9]$" maxLength="10" value={customerDUI} onChange={(e) => setCustomerDUI(e.target.value)} className="w-full px-3 border rounded" />
                         </div>
 
                         <div>
@@ -80,6 +89,7 @@ const RegisterCustomers= ({
                       </form>
             </div>
         )
+        
     
 }
 

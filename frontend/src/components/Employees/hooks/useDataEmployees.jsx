@@ -12,46 +12,50 @@ dui
 isVerified
 */
 
-const useDataCustomers = () => {
+const useDataEmployees = () => {
     const [activeTab, setActiveTab] = useState("list");
-    const API = "http://localhost:5000/api/customers";
+    const API = "http://localhost:5000/api/employee";
     const [id, setId] = useState("")
     const [name, setName] = useState("")
     const [lastName, setlastName] = useState("")
     const [birthday, setBirthday] = useState("")
     const [email, setEmail] = useState("")
+    const [address, setAddress] = useState("")
     const [password, setPassword] =useState("")
+    const [hireDate, setHireDate] = useState("")
     const [telephone, setTelephone] = useState("")
     const [dui, setDui] = useState("")
     const [isVerified, setIsVerified] = useState(false)
-    const [customers, setCustomers] = useState([])
+    const [employee, setEmployee] = useState([])
     const [loading, setLoading] = useState(true)
 
-    const fetchCustomers = async () => {
+    const fetchEmployee = async () => {
         const response = await fetch(API)
         if(!response.ok){
             throw new Error("Hubo un error al obtener los clientes")
         }
         const data = await response.json()
-        setCustomers(data)
+        setEmployee(data)
         setLoading(false)
     }
 
     useEffect(() => {
-        fetchCustomers()
+        fetchEmployee()
     }, [])
     
     
 
     
-    const saveCustomers = async (e) => {
+    const saveEmployee = async (e) => {
         e.preventDefault()
-        const newCustomer = {
+        const newEmployee = {
             name: name,
             lastName: lastName,
             birthday: birthday,
             email: email,
+            address: address,
             password: password,
+            hireDate: hireDate,
             telephone: telephone,
             dui: dui,
             isVerified: isVerified
@@ -61,25 +65,27 @@ const useDataCustomers = () => {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(newCustomer),
+            body: JSON.stringify(newEmployee),
         })
         if(!response.ok){
             throw new Error("Hubo un error al registrar el cliente")
         }
         const data = await response.json()
         toast.success('Cliente registrado')
-        setCustomers(data)
-        fetchCustomers()
+        setEmployee(data)
+        fetchEmployee()
         setName("")
         setlastName("")
         setBirthday("")
         setEmail("")
+        setAddress("")
         setPassword("")
+        setHireDate("")
         setTelephone("")
         setDui("")
         setIsVerified()
     }
-    const deleteCustomers = async (id) => {
+    const deleteEmployee = async (id) => {
         const response = await fetch(`${API}/${id}`, {
           method: "DELETE",
           headers: {
@@ -90,39 +96,41 @@ const useDataCustomers = () => {
           throw new Error("Hubo un error al eliminar el cliente")
         }
         toast.success('Cliente Eliminado');
-        fetchCustomers()
+        fetchEmployee()
       }
-      const updateCustomers = async (dataCustomers) => {
-        setId(dataCustomers._id)
-        setName(dataCustomers.productName)
-        setlastName(dataCustomers.lastName)
-        setBirthday(dataCustomers.birthday)
-        setEmail(dataCustomers.email)
-        setPassword(dataCustomers.password)
-        setTelephone(dataCustomers.telephone)
-        setDui(dataCustomers.dui)
+      const updateEmployee = async (dataEmployee) => {
+        setId(dataEmployee._id)
+        setName(dataEmployee.productName)
+        setlastName(dataEmployee.lastName)
+        setBirthday(dataEmployee.birthday)
+        setEmail(dataEmployee.email)
+        setPassword(dataEmployee.password)
+        setTelephone(dataEmployee.telephone)
+        setDui(dataEmployee.dui)
         setIsVerified(data.isVerified)
         setActiveTab("form")
     }
     const handleEdit = async (e) => {
         e.preventDefault()
         try {
-            const editCustomer = {
-                name: name,
-                lastName: lastName,
-                birthday: birthday,
-                email: email,
-                password: password,
-                telephone: telephone,
-                dui: dui,
-                isVerified: isVerified
+            const editEmployee = {
+              name: name,
+              lastName: lastName,
+              birthday: birthday,
+              email: email,
+              address: address,
+              password: password,
+              hireDate: hireDate,
+              telephone: telephone,
+              dui: dui,
+              isVerified: isVerified
             }
             const response = await fetch(`${API}/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(editCustomer)
+                body: JSON.stringify(editEmployee)
             })
             if (!response.ok){
                 throw new Error("Error al actualizar el cliente")
@@ -133,11 +141,13 @@ const useDataCustomers = () => {
             setlastName("")
             setBirthday("")
             setEmail("")
+            setAddress("")
             setPassword("")
+            setHireDate("")
             setTelephone("")
             setDui("")
             setIsVerified(true)
-            fetchCustomers()
+            fetchEmployee()
         }catch(error){
             console.error("Error al editar el ciente: ", error)
         }
@@ -149,16 +159,18 @@ const useDataCustomers = () => {
         lastName, setlastName,
         birthday, setBirthday,
         email, setEmail,
+        address, setAddress,
         password, setPassword,
+        hireDate, setHireDate,
         telephone, setTelephone,
         dui, setDui,
         isVerified, setIsVerified,
-        customers,
+        employee,
         loading,
-        saveCustomers,
-        deleteCustomers,
-        updateCustomers,
+        saveEmployee,
+        deleteEmployee,
+        updateEmployee,
         handleEdit
     }
 }
-export default useDataCustomers
+export default useDataEmployees

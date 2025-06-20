@@ -35,7 +35,7 @@ const Products = () => {
             
             <div className="flex border-b border-gray-200 mb-4">
                 <button className="px-4 py-2 text-gray-600 hover:text-gray-800 focus:outline-none focus:border-b-2 focus:border-blue-500" onClick={() => setActiveTab("list")}>
-                    Lista de productos
+                 Lista de productos
                 </button>
                 <button className="px-4 py-2 text-gray-600 hover:text-gray-800 focus:outline-none focus:border-b-2 focus:border-blue-500" onClick={() => setActiveTab("form")}>
                  Gestionar productos

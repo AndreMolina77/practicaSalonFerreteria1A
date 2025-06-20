@@ -20,13 +20,13 @@ const ProductsCard = ({product, deleteProducts, updateProducts}) => {
                     </span>
                 </h2>
 
-                <p className="text-gray-500 font-bold mb-1">{product.name}</p>
+                <p className="text-gray-500 font-bold mb-1">Nombre: {product.name}</p>
 
-                <p className="text-gray-500 font-bold mb-1">{product.description}</p>
+                <p className="text-gray-500 font-bold mb-1">Descripción: {product.description}</p>
 
-                <p className="text-gray-500 font-bold mb-1">{product.price}</p>
+                <p className="text-gray-500 font-bold mb-1">Precio: {product.price}$</p>
 
-                <p className="text-gray-500 font-bold mb-1">{product.stock}</p>
+                <p className="text-gray-500 font-bold mb-1">Stock: {product.stock}</p>
 
                 <Button 
                 label={"Eliminar"}
