@@ -9,7 +9,7 @@
 
 import { model, Schema} from "mongoose";
 
-const salesSchema = new Schema(
+const salesModel = new Schema(
     {
         product:{
             type: String,

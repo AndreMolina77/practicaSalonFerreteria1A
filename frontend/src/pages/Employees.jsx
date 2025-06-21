@@ -8,7 +8,7 @@ const Employees = () => {
         activeTab, setActiveTab,
         id, 
         name, setName,
-        lastName, setlastName,
+        lastName, setLastName,
         birthday, setBirthday,
         email, setEmail,
         address, setAddress,
@@ -17,6 +17,7 @@ const Employees = () => {
         telephone, setTelephone,
         dui, setDui,
         isVerified, setIsVerified,
+        isssnumber, setisssnumber,
         employee,
         loading,
         saveEmployee,
@@ -43,7 +44,7 @@ const Employees = () => {
             {activeTab === "list" && (
               <div>
                 <EmployeesList 
-                employee={employee} 
+                employees={employee} 
                 loading={loading} 
                 deleteEmployee={deleteEmployee} 
                 updateEmployee={updateEmployee}/>
@@ -53,15 +54,16 @@ const Employees = () => {
               <div>
                 <FormEmployees
                 setEmployeeName={setName} 
-                setEmployeeLastName={setlastName} 
+                setEmployeeLastName={setLastName} 
                 setEmployeeBirthday={setBirthday} 
                 setEmployeeEmail={setEmail} 
                 setEmployeeAddress={setAddress}
                 setEmployeePassword={setPassword} 
                 setEmployeeHireDate={setHireDate}
                 setEmployeeTelephone={setTelephone} 
-                setEmployeeDUI={setDui} 
+                setEmployeedui={setDui} 
                 setEmployeeIsVerified={setIsVerified} 
+                setEmployeeisssnumber={setisssnumber}
                 id={id} 
                 handleEdit={handleEdit} 
                 saveEmployee={saveEmployee}
@@ -69,12 +71,13 @@ const Employees = () => {
                 employeeLastName={lastName}
                 employeeBirthday={birthday}
                 employeeEmail={email}
-                employeeAdress={address}
+                employeeAddress={address}
                 employeePassword={password}
                 employeeHireDate={hireDate}
                 employeeTelephone={telephone}
                 employeedui={dui}
                 employeeIsVerified={isVerified}
+                employeeisssnumber={isssnumber}
                 />
               </div>
             )}

@@ -5,10 +5,10 @@ const EmployeesCard = ({ employee, deleteEmployee, updateEmployee }) => {
   return (
     <div className="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200">
       <div className="px-6 py-4">
-      <h2 className="text-xl font-bold text-gray-800 mb-2">
-                    Nombre de Empleado:{" "}
+        <h2 className="text-xl font-bold text-gray-800 mb-2">
+                    Nombre de Empleado:{""}
                     <span className="text-xl font-medium text-gray-700">
-                        {employee.name}{" "} 
+                        {employee.name}{""} 
                     </span>
                 </h2>
 
@@ -29,6 +29,8 @@ const EmployeesCard = ({ employee, deleteEmployee, updateEmployee }) => {
                 <p className="text-gray-500 font-bold mb-1">DUI: {employee.dui}</p>                
 
                 <p className="text-gray-500 font-bold">Verificado: {employee.isVerified ? "✓ Verificado" : "✗ No Verificado"}</p>
+
+                <p className="text-gray-500 font-bold">Número ISSS: {employee.isssnumber}</p>
         
         {/* Botones de acción */}
             <Button
@@ -41,6 +43,7 @@ const EmployeesCard = ({ employee, deleteEmployee, updateEmployee }) => {
               actionButton={() => updateEmployee(employee)} // Pasamos el objeto 'employee' completo para editar
               colorClass={"warning"}
             />
+            
       </div>
     </div>
   )

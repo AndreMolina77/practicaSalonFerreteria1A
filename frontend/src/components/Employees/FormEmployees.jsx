@@ -13,14 +13,16 @@ const RegisterEmployees = ({
     setEmployeeHireDate,
     employeeTelephone, 
     setEmployeeTelephone, 
-    employeeDUI, 
-    setEmployeeDUI, 
+    employeedui, 
+    setEmployeedui, 
     employeeEmail,
     setEmployeeEmail,
     employeeAddress,
     setEmployeeAddress,
     employeeIsVerified, 
     setEmployeeIsVerified, 
+    employeeisssnumber,
+    setEmployeeisssnumber,
     id, 
     handleEdit, 
     saveEmployee
@@ -70,25 +72,30 @@ const RegisterEmployees = ({
                         </div>
 
                         <div>
-                            <label className="vblock text-gray-700 font-bold mb-2" htmlFor="DUI">DUI:</label>
-                            <input type="text" pattern="^[0-9]{8}-[0-9]$" maxLength="10" value={employeeDUI} onChange={(e) => setEmployeeDUI(e.target.value)} className="w-full px-3 border rounded" />
+                            <label className="block text-gray-700 font-bold mb-2" htmlFor="DUI">DUI:</label>
+                            <input type="text" pattern="^[0-9]{8}-[0-9]$" maxLength="10" value={employeedui} onChange={(e) => setEmployeedui(e.target.value)} className="w-full px-3 border rounded" />
                         </div>
 
                         <div>
-                            <label className="vblock text-gray-700 font-bold mb-2" htmlFor="isVerified">Está verificado</label>
-                            <select name="isAVerified" value={employeeIsVerified}  onChange={(e) => setEmployeeIsVerified(e.target.value === 'true')} className="w-full px--3 py2 border rounded">
+                            <label className="block text-gray-700 font-bold mb-2" htmlFor="isVerified">Está verificado</label>
+                            <select name="isVerified" value={employeeIsVerified}  onChange={(e) => setEmployeeIsVerified(e.target.value === 'true')} className="w-full px-3 py2 border rounded">
                             <option value="true">Si</option>
                             <option value="false">No</option>
                             </select>
                         </div>
+
+                        <div>
+                          <label className='block text-gray-700 font-bold mb-2' htmlFor="isssnumber">Número ISSS: </label>
+                          <input type="text" value={employeeisssnumber} onChange={(e) => setEmployeeisssnumber(e.target.value)} className="w-full px-3 border rounded" />
+                        </div>
         
 
         {!id ? (
-          <button type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onClick={(e) => saveEmployee(e)}>
+          <button type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 mt-4" onClick={(e) => saveEmployee(e)}>
             Guardar
           </button>
         ) : (
-          <button type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onClick={(e) => handleEdit(e)}>
+          <button type="submit" className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 mt-4" onClick={(e) => handleEdit(e)}>
             Editar
           </button>
         )}

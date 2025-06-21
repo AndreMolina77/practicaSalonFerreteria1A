@@ -44,8 +44,8 @@ const RegisterCustomers= ({
                         </div>
 
                         <div>
-                            <label className="block text-gray-700 font-bold mb-2" htmlFor="lastName">Correo electrónico:</label>
-                            <input type="text" name="lastName" value={customerEmail} onChange={(e) => setCustomerEmail(e.target.value)} className="w-full px-3 border rounded" placeholder="Ej: correoelectronico@gmail.com" />
+                            <label className="block text-gray-700 font-bold mb-2" htmlFor="email">Correo electrónico:</label>
+                            <input type="text" name="email" value={customerEmail} onChange={(e) => setCustomerEmail(e.target.value)} className="w-full px-3 border rounded" placeholder="Ej: correoelectronico@gmail.com" />
                         </div>
 
                         <div>
@@ -65,7 +65,7 @@ const RegisterCustomers= ({
 
                         <div>
                             <label className="block text-gray-700 font-bold mb-2" htmlFor="DUI">DUI:</label>
-                            <input type="text" pattern="^[0-9]{8}-[0-9]$" maxLength="10" value={customerDui} onChange={(e) => setCustomerDui(e.target.value)} className="w-full px-3 border rounded" />
+                            <input type="text"  maxLength="10" value={customerDui} onChange={(e) => setCustomerDui(e.target.value)} className="w-full px-3 border rounded" />
                         </div>
 
                         <div>

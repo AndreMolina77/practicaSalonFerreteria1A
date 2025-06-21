@@ -16,7 +16,7 @@ const ProductsCard = ({product, deleteProducts, updateProducts}) => {
                 <h2 className="text-xl font-bold text-gay-800 mb-2">
                     Nombre de Producto:{""}
                     <span className="text-xl font-medium text-gray-700">
-                        {product.name}{""}
+                        {product.name}{" "}
                     </span>
                 </h2>
 

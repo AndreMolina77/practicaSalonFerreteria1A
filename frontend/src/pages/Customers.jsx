@@ -56,7 +56,7 @@ const Customers = () => {
                 setCustomerEmail={setEmail} 
                 setCustomerPassword={setPassword} 
                 setCustomerTelephone={setTelephone} 
-                setCustomerDUI={setDui} 
+                setCustomerDui={setDui} 
                 setCustomerIsVerified={setIsVerified} 
                 id={id} 
                 handleEdit={handleEdit} 
@@ -67,7 +67,7 @@ const Customers = () => {
                 customerEmail={email}
                 customerPassword={password}
                 customerTelephone={telephone}
-                customerdui={dui}
+                customerDui={dui}
                 customerIsVerified={isVerified}
                 />
               </div>

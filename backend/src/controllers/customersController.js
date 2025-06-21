@@ -10,8 +10,8 @@ customersController.getcustomers = async (req, res) => {
 
 // INSERT
 customersController.createcustomers = async (req, res) => {
-  const { name, lastName, birthday, email, password, telephone, dui } = req.body;
-  const newcustomers = new customersModel({ name, lastName, birthday, email, password, telephone, dui});
+  const { name, lastName, birthday, email, password, telephone, dui, isVerified } = req.body;
+  const newcustomers = new customersModel({ name, lastName, birthday, email, password, telephone, dui, isVerified});
   await newcustomers.save();
   res.json({ message: "customer save" });
 };
@@ -28,7 +28,7 @@ const deletedcustomers = await customersModel.findByIdAndDelete(req.params.id);
 // UPDATE
 customersController.updatecustomers = async (req, res) => {
   // Solicito todos los valores
-  const { name, lastName, birthday, email, password, telephone, dui  } = req.body;
+  const { name, lastName, birthday, email, password, telephone, dui, isVerified } = req.body;
   // Actualizo
   await customersModel.findByIdAndUpdate(
     req.params.id,
@@ -39,7 +39,8 @@ customersController.updatecustomers = async (req, res) => {
          email, 
          password, 
          telephone, 
-         dui 
+         dui, 
+         isVerified 
     },
     { new: true }
   );

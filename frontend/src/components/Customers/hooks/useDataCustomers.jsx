@@ -1,4 +1,4 @@
-import { use, useEffect, useState } from "react";
+import {useEffect, useState } from "react";
 import { toast } from "react-hot-toast"
 
 /*
@@ -100,7 +100,7 @@ const useDataCustomers = () => {
         setEmail(dataCustomers.email)
         setPassword(dataCustomers.password)
         setTelephone(dataCustomers.telephone)
-        setDui(dataCustomers.name)
+        setDui(dataCustomers.dui)
         setIsVerified(dataCustomers.isVerified)
         setActiveTab("form")
     }

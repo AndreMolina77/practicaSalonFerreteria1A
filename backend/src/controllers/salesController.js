@@ -29,9 +29,7 @@ salesController.getSalesByCategory = async (req, res) => {
         
     }
 }
-import salesModel from "../models/sales.js";
 
-const salesController = {};
 
 //=========================
 //   VENTAS POR CATEGORIA
